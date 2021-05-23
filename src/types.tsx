@@ -1,8 +1,6 @@
-/**
- * Learn more about using TypeScript with React Navigation:
- * https://reactnavigation.org/docs/typescript/
- */
-
+/**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+ * NAVIGATION
+  -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
 export type RootStackParamList = {
   Root: undefined
   NotFound: undefined
@@ -34,4 +32,32 @@ export type ChatsScreenParamList = {
 
 export type SettingsScreenParamList = {
   SettingsScreen: undefined
+}
+
+/**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+ * USER
+  -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+export type User = {
+  id: string
+  name: string
+  imageUri: string
+}
+
+/**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+ * MESSAGE
+  -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+export type Message = {
+  id: string
+  content: string
+  createdAt: string
+}
+
+/**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+ * CHATS
+  -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+
+export type Chatroom = {
+  id: string
+  users: User[]
+  lastMessage: Message
 }

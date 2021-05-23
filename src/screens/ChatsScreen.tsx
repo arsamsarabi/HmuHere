@@ -1,21 +1,28 @@
 import * as React from 'react'
-import { StyleSheet } from 'react-native'
+import { FlatList, StyleSheet } from 'react-native'
 
-import { Text, View } from '../components/Themed'
+import { ChatListItem, Screen, View, Text } from '../components'
+import { mockChatrooms } from '../mocks'
+import type { Chatroom } from '../types'
 
 export const ChatsScreen = () => {
   return (
-    <View style={styles.container}>
+    <Screen style={styles.container}>
       <Text style={styles.title}>Chats Screen</Text>
-    </View>
+      <FlatList
+        data={mockChatrooms}
+        renderItem={({ item }) => <ChatListItem chatroom={item} />}
+        keyExtractor={(item) => item.id}
+      />
+    </Screen>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
   },
   title: {
     fontSize: 20,
